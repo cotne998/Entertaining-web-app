@@ -1,0 +1,116 @@
+import styled from "styled-components";
+
+export default function TrendingComponent({
+  handleBookmark,
+  dataState,
+  setDataState,
+}: ITrendingProps) {
+  return (
+    <>
+      <Trending>
+        <TrendingTitle>Trending</TrendingTitle>
+        <TrendingContent>
+          {dataState.map((item, index) => {
+            return (
+              item.isTrending && (
+                <>
+                  <TrendingItem key={index}>
+                    <Bookmark onClick={() => handleBookmark(index)}>
+                      <BookmarkIcon
+                        src={
+                          item.isBookmarked
+                            ? "/assets/icon-bookmark-full.svg"
+                            : "/assets/Bookmark.svg"
+                        }
+                      />
+                    </Bookmark>
+                    <TrendingImg src={item.thumbnail.trending?.small} alt="" />
+                    <MovieInformation>
+                      {item.year} •{" "}
+                      <CategoryIcon
+                        src={
+                          item.category === "Movie"
+                            ? "/assets/icon-nav-movies.svg"
+                            : "/assets/icon-nav-tv-series.svg"
+                        }
+                        alt=""
+                      />{" "}
+                      {item.category} • {item.rating}
+                    </MovieInformation>
+                    <MovieTitle>{item.title}</MovieTitle>
+                  </TrendingItem>
+                </>
+              )
+            );
+          })}
+        </TrendingContent>
+      </Trending>
+    </>
+  );
+}
+
+const Trending = styled.section`
+  width: 100%;
+`;
+
+const TrendingTitle = styled.h2`
+  font-size: 2rem;
+  color: white;
+  font-weight: 300;
+`;
+
+const TrendingContent = styled.div`
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+`;
+
+const TrendingImg = styled.img`
+  width: 24rem;
+  border-radius: 0.8rem;
+`;
+
+const TrendingItem = styled.div`
+  position: relative;
+`;
+
+const MovieTitle = styled.h4`
+  color: white;
+  font-weight: 300;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 1.6rem;
+  bottom: 1.6rem;
+`;
+
+const MovieInformation = styled.span`
+  color: #ffffffb4;
+  position: absolute;
+  left: 1.6rem;
+  bottom: 4rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+`;
+
+const CategoryIcon = styled.img`
+  width: 1.2rem;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%)
+    contrast(0%);
+`;
+
+const Bookmark = styled.button`
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  padding: 1rem 1rem 0.6rem;
+  border-radius: 50%;
+  background-color: #10141e8b;
+  right: 0.8rem;
+  top: 0.8rem;
+`;
+
+const BookmarkIcon = styled.img`
+  width: 1.1rem;
+`;
