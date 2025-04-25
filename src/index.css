@@ -55,3 +55,23 @@ main {
   border-radius: 0.7rem;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 90rem) {
+  header {
+    width: 9.6rem;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    left: 3.2rem;
+    height: 97vh;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2rem;
+    justify-content: unset;
+    gap: 7.5rem;
+  }
+
+  body {
+    padding-left: 16.4rem;
+  }
+}

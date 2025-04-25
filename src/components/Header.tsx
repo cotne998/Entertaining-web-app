@@ -29,12 +29,27 @@ export default function Header() {
 const Nav = styled.nav`
   display: flex;
   gap: 2.4rem;
+
+  @media only screen and (min-width: 90rem) {
+    flex-direction: column;
+    gap: 4rem;
+  }
 `;
 
 const Avatar = styled.img`
   width: 2.4rem;
+
+  @media only screen and (min-width: 90rem) {
+    width: 4rem;
+    position: absolute;
+    bottom: 3.2rem;
+  }
 `;
 
 const NavImg = styled.img`
   cursor: pointer;
+
+  @media only screen and (min-width: 48rem) {
+    width: 2rem;
+  }
 `;
