@@ -103,6 +103,7 @@ const TrendingImgDesktop = styled.img`
 
 const TrendingItem = styled.div`
   position: relative;
+  cursor: pointer;
 `;
 
 const MovieTitle = styled.h4`
