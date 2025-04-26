@@ -26,6 +26,7 @@ export default function Recommended({
                       />
                     </Bookmark>
                     <Thumbnail src={item.thumbnail.regular.small} />
+                    <ThumbnailDesktop src={item.thumbnail.regular.large} />
                     <RecommendedInfo>
                       <MovieInfo>
                         {item.year} •{" "}
@@ -86,6 +87,20 @@ const Thumbnail = styled.img`
   @media only screen and (min-width: 48rem) {
     width: 22rem;
   }
+
+  @media only screen and (min-width: 90rem) {
+    display: none;
+  }
+`;
+
+const ThumbnailDesktop = styled.img`
+  display: none;
+
+  @media only screen and (min-width: 90rem) {
+    display: block;
+    width: 28rem;
+    border-radius: 1rem;
+  }
 `;
 
 const RecommendedItem = styled.div`
@@ -93,6 +108,7 @@ const RecommendedItem = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  cursor: pointer;
 `;
 
 const RecommendedInfo = styled.div`

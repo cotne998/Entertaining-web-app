@@ -24,6 +24,7 @@ export default function TrendingComponent({
                       />
                     </Bookmark>
                     <TrendingImg src={item.thumbnail.trending?.small} alt="" />
+                    <TrendingImgDesktop src={item.thumbnail.trending?.large} />
                     <MovieInformation>
                       {item.year} •{" "}
                       <CategoryIcon
@@ -83,6 +84,20 @@ const TrendingImg = styled.img`
 
   @media only screen and (min-width: 48rem) {
     width: 47rem;
+  }
+
+  @media only screen and (min-width: 90rem) {
+    display: none;
+  }
+`;
+
+const TrendingImgDesktop = styled.img`
+  display: none;
+
+  @media only screen and (min-width: 90rem) {
+    display: block;
+    width: 47rem;
+    border-radius: 0.8rem;
   }
 `;
 
