@@ -59,6 +59,10 @@ const TrendingTitle = styled.h2`
   font-size: 2rem;
   color: white;
   font-weight: 300;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 3.2rem;
+  }
 `;
 
 const TrendingContent = styled.div`
@@ -72,6 +76,10 @@ const TrendingContent = styled.div`
 const TrendingImg = styled.img`
   width: 24rem;
   border-radius: 0.8rem;
+
+  @media only screen and (min-width: 48rem) {
+    width: 47rem;
+  }
 `;
 
 const TrendingItem = styled.div`
@@ -85,6 +93,10 @@ const MovieTitle = styled.h4`
   position: absolute;
   left: 1.6rem;
   bottom: 1.6rem;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 2.4rem;
+  }
 `;
 
 const MovieInformation = styled.span`
@@ -94,6 +106,11 @@ const MovieInformation = styled.span`
   bottom: 4rem;
   font-weight: 300;
   font-size: 1.2rem;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const CategoryIcon = styled.img`

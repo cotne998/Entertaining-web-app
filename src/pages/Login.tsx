@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import LogoIcon from "/assets/logo.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +12,6 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -88,8 +87,9 @@ const LoginSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  max-width: 40rem;
-  margin: auto;
+  width: 40rem;
+  margin-left: 50%;
+  transform: translateX(-60%);
 `;
 
 const Form = styled.form`
@@ -111,9 +111,10 @@ const InputDiv = styled.div`
 
 const Logo = styled.img`
   margin-left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-170%);
   margin-top: 4.8rem;
   margin-bottom: 5.8rem;
+  width: 3.2rem;
 `;
 
 const ErrorText = styled.span`

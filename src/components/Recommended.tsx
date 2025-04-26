@@ -56,6 +56,10 @@ const Title = styled.h2`
   font-size: 2rem;
   color: white;
   font-weight: 300;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 3.2rem;
+  }
 `;
 
 const RecommendedContainer = styled.section`
@@ -69,11 +73,19 @@ const RecommendedContent = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.4rem;
+
+  @media only screen and (min-width: 48rem) {
+    gap: 2.9rem;
+  }
 `;
 
 const Thumbnail = styled.img`
   width: 16.4rem;
   border-radius: 0.7rem;
+
+  @media only screen and (min-width: 48rem) {
+    width: 22rem;
+  }
 `;
 
 const RecommendedItem = styled.div`
@@ -92,12 +104,20 @@ const RecommendedInfo = styled.div`
 const MovieInfo = styled.span`
   font-size: 1.1rem;
   color: #ffffffb4;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 1.3rem;
+  }
 `;
 
 const MovieTitle = styled.span`
   color: #fff;
   font-weight: 300;
   font-size: 1.4rem;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 1.8rem;
+  }
 `;
 
 const CategoryIcon = styled.img`

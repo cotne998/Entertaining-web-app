@@ -64,6 +64,16 @@ main {
   cursor: pointer;
 }
 
+/*Tablet*/
+
+@media only screen and (min-width: 48rem) {
+  main {
+    gap: 4rem;
+  }
+}
+
+/*Desktop*/
+
 @media only screen and (min-width: 90rem) {
   header {
     width: 9.6rem;

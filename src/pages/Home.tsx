@@ -50,6 +50,11 @@ const Search = styled.input`
   font-size: 1.6rem;
   color: white;
   padding-left: 4rem;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 2.4rem;
+    padding-left: 6rem;
+  }
 `;
 
 const SearchImg = styled.img`
@@ -58,4 +63,8 @@ const SearchImg = styled.img`
   top: 50%;
   transform: translateY(-50%);
   width: 2.4rem;
+
+  @media only screen and (min-width: 48rem) {
+    width: 3.2rem;
+  }
 `;
