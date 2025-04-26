@@ -3,7 +3,6 @@ import styled from "styled-components";
 export default function TrendingComponent({
   handleBookmark,
   dataState,
-  setDataState,
 }: ITrendingProps) {
   return (
     <>
@@ -51,6 +50,9 @@ export default function TrendingComponent({
 
 const Trending = styled.section`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
 `;
 
 const TrendingTitle = styled.h2`
@@ -100,7 +102,7 @@ const CategoryIcon = styled.img`
     contrast(0%);
 `;
 
-const Bookmark = styled.button`
+export const Bookmark = styled.button`
   all: unset;
   cursor: pointer;
   position: absolute;
@@ -111,6 +113,6 @@ const Bookmark = styled.button`
   top: 0.8rem;
 `;
 
-const BookmarkIcon = styled.img`
+export const BookmarkIcon = styled.img`
   width: 1.1rem;
 `;
