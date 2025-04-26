@@ -71,6 +71,10 @@ const TrendingContent = styled.div`
   width: 100%;
   display: flex;
   gap: 2rem;
+
+  @media only screen and (min-width: 48rem) {
+    gap: 4rem;
+  }
 `;
 
 const TrendingImg = styled.img`
