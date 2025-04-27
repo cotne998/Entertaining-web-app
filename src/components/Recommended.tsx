@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Bookmark } from "./TrendingComponent";
 import { BookmarkIcon } from "./TrendingComponent";
+import { useContext } from "react";
+import { dataContext } from "../pages/MainLayout";
 
-export default function Recommended({
-  dataState,
-  handleBookmark,
-}: ITrendingProps) {
+export default function Recommended() {
+  const { dataState, handleBookmark } = useContext(dataContext);
+
   return (
     <>
       <RecommendedContainer>

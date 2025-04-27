@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { dataContext } from "../pages/MainLayout";
 
-export default function TrendingComponent({
-  handleBookmark,
-  dataState,
-}: ITrendingProps) {
+export default function TrendingComponent() {
+  const { dataState, handleBookmark } = useContext(dataContext);
+
   return (
     <>
       <Trending>

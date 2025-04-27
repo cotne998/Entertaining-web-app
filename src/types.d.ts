@@ -23,3 +23,8 @@ interface ITrendingProps {
   dataState: IdataState[];
   setDataState: React.Dispatch<React.SetStateAction>;
 }
+
+interface IDataContext {
+  dataState: IdataState[];
+  handleBookmark: (index: number) => void;
+}
