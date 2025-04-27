@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import TVSeries from "./pages/TVSeries";
 import Bookmark from "./pages/BookmarkPage";
+import Search from "./pages/Search";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/Main/Bookmark",
         element: <Bookmark />,
+      },
+      {
+        path: "/Main/Search",
+        element: <Search />,
       },
     ],
   },

@@ -27,4 +27,5 @@ interface ITrendingProps {
 interface IDataContext {
   dataState: IdataState[];
   handleBookmark: (index: number) => void;
+  inputValue: string;
 }

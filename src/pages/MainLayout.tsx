@@ -9,6 +9,7 @@ import SearchIcon from "/assets/icon-search.svg";
 export const dataContext = createContext<IDataContext>({
   dataState: [],
   handleBookmark: () => {},
+  inputValue: "",
 });
 
 export default function MainLayout() {
@@ -16,6 +17,19 @@ export default function MainLayout() {
     const savedData = localStorage.getItem("dataState");
     return savedData ? JSON.parse(savedData) : data;
   });
+
+  const [inputValue, setInputValue] = useState<string>("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value);
+
+    if (value.trim() !== "") {
+      navigate(`/Main/Search`);
+    } else {
+      navigate("/Main/Home");
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -40,10 +54,15 @@ export default function MainLayout() {
       <Header />
       <main>
         <InputDiv>
-          <Search type="text" placeholder="Search for movies or TV series" />
+          <Search
+            value={inputValue}
+            onChange={handleChange}
+            type="text"
+            placeholder="Search for movies or TV series"
+          />
           <SearchImg src={SearchIcon} />
         </InputDiv>
-        <dataContext.Provider value={{ dataState, handleBookmark }}>
+        <dataContext.Provider value={{ dataState, handleBookmark, inputValue }}>
           <Outlet />
         </dataContext.Provider>
       </main>
