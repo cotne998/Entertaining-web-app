@@ -21,7 +21,7 @@ export default function TVSeries() {
   return (
     <>
       <RecommendedContainer>
-        <Title>Movies</Title>
+        <Title>TV Series</Title>
         <RecommendedContent>
           {dataState.map((item, index) => {
             return (

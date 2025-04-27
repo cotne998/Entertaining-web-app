@@ -21,7 +21,7 @@ export default function BookmarkPage() {
   return (
     <>
       <RecommendedContainer>
-        <Title>Movies</Title>
+        <Title>Bookmarked</Title>
         <RecommendedContent>
           {dataState.map((item, index) => {
             return (

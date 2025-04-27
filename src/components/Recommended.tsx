@@ -73,7 +73,6 @@ export const RecommendedContainer = styled.section`
 export const RecommendedContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1.4rem;
 
   @media only screen and (min-width: 48rem) {
