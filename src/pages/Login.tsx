@@ -87,9 +87,13 @@ const LoginSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  width: 40rem;
+  width: 35rem;
   margin-left: 50%;
-  transform: translateX(-60%);
+  transform: translateX(-50%);
+
+  @media only screen and (min-width: 90rem) {
+    transform: translateX(-70%);
+  }
 `;
 
 const Form = styled.form`
@@ -111,10 +115,14 @@ const InputDiv = styled.div`
 
 const Logo = styled.img`
   margin-left: 50%;
-  transform: translateX(-170%);
   margin-top: 4.8rem;
   margin-bottom: 5.8rem;
   width: 3.2rem;
+  transform: translateX(-50%);
+
+  @media only screen and (min-width: 90rem) {
+    transform: translateX(-270%);
+  }
 `;
 
 const ErrorText = styled.span`
