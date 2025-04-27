@@ -7,12 +7,15 @@ import styled from "styled-components";
 import SearchIcon from "/assets/icon-search.svg";
 
 export const dataContext = createContext<IDataContext>({
-  dataState: data,
+  dataState: [],
   handleBookmark: () => {},
 });
 
 export default function MainLayout() {
-  const [dataState, setDataState] = useState(data);
+  const [dataState, setDataState] = useState<IdataState[]>(() => {
+    const savedData = localStorage.getItem("dataState");
+    return savedData ? JSON.parse(savedData) : data;
+  });
 
   const navigate = useNavigate();
 
@@ -23,6 +26,10 @@ export default function MainLayout() {
       )
     );
   };
+
+  useEffect(() => {
+    localStorage.setItem("dataState", JSON.stringify(dataState));
+  }, [dataState]);
 
   useEffect(() => {
     navigate("/Main/Home");
