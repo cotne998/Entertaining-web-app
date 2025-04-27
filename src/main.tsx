@@ -8,7 +8,7 @@ import MainLayout from "./pages/MainLayout";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import TVSeries from "./pages/TVSeries";
-import Bookmark from "./pages/Bookmark";
+import Bookmark from "./pages/BookmarkPage";
 
 const router = createBrowserRouter([
   {
