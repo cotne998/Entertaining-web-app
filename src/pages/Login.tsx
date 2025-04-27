@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import LogoIcon from "/assets/logo.svg";
 import { useNavigate } from "react-router-dom";
+import { keyframes } from "styled-components";
 
 interface Inputs {
   email: string;
@@ -125,12 +126,40 @@ const Logo = styled.img`
   }
 `;
 
+const ErrorAnimation = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
 const ErrorText = styled.span`
   color: #fc4747;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
   text-align: right;
+
+  animation-name: ${ErrorAnimation};
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 1.4rem;
+  }
 `;
