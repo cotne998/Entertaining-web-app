@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import data from "../data.json";
 import { createContext } from "react";
+import styled from "styled-components";
+import SearchIcon from "/assets/icon-search.svg";
 
 export const dataContext = createContext<IDataContext>({
   dataState: data,
@@ -30,6 +32,10 @@ export default function MainLayout() {
     <>
       <Header />
       <main>
+        <InputDiv>
+          <Search type="text" placeholder="Search for movies or TV series" />
+          <SearchImg src={SearchIcon} />
+        </InputDiv>
         <dataContext.Provider value={{ dataState, handleBookmark }}>
           <Outlet />
         </dataContext.Provider>
@@ -37,3 +43,34 @@ export default function MainLayout() {
     </>
   );
 }
+
+const InputDiv = styled.div`
+  position: relative;
+`;
+
+const Search = styled.input`
+  all: unset;
+  box-sizing: border-box;
+  padding: 2.4rem;
+  width: 100%;
+  font-size: 1.6rem;
+  color: white;
+  padding-left: 4rem;
+
+  @media only screen and (min-width: 48rem) {
+    font-size: 2.4rem;
+    padding-left: 6rem;
+  }
+`;
+
+const SearchImg = styled.img`
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.4rem;
+
+  @media only screen and (min-width: 48rem) {
+    width: 3.2rem;
+  }
+`;

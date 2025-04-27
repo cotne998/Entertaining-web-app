@@ -54,7 +54,7 @@ export default function Recommended() {
   );
 }
 
-const Title = styled.h2`
+export const Title = styled.h2`
   font-size: 2rem;
   color: white;
   font-weight: 300;
@@ -64,13 +64,13 @@ const Title = styled.h2`
   }
 `;
 
-const RecommendedContainer = styled.section`
+export const RecommendedContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
 `;
 
-const RecommendedContent = styled.div`
+export const RecommendedContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -81,7 +81,7 @@ const RecommendedContent = styled.div`
   }
 `;
 
-const Thumbnail = styled.img`
+export const Thumbnail = styled.img`
   width: 16.4rem;
   border-radius: 0.7rem;
 
@@ -94,7 +94,7 @@ const Thumbnail = styled.img`
   }
 `;
 
-const ThumbnailDesktop = styled.img`
+export const ThumbnailDesktop = styled.img`
   display: none;
 
   @media only screen and (min-width: 90rem) {
@@ -104,7 +104,7 @@ const ThumbnailDesktop = styled.img`
   }
 `;
 
-const RecommendedItem = styled.div`
+export const RecommendedItem = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -112,13 +112,13 @@ const RecommendedItem = styled.div`
   cursor: pointer;
 `;
 
-const RecommendedInfo = styled.div`
+export const RecommendedInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 `;
 
-const MovieInfo = styled.span`
+export const MovieInfo = styled.span`
   font-size: 1.1rem;
   color: #ffffffb4;
 
@@ -127,7 +127,7 @@ const MovieInfo = styled.span`
   }
 `;
 
-const MovieTitle = styled.span`
+export const MovieTitle = styled.span`
   color: #fff;
   font-weight: 300;
   font-size: 1.4rem;
@@ -137,7 +137,7 @@ const MovieTitle = styled.span`
   }
 `;
 
-const CategoryIcon = styled.img`
+export const CategoryIcon = styled.img`
   width: 1rem;
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%)
     contrast(0%);
