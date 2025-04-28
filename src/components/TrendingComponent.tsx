@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useContext } from "react";
 import { dataContext } from "../pages/MainLayout";
+import { PlayContainer, Play, PlayButton } from "./Recommended";
 
 export default function TrendingComponent() {
-  const { dataState, handleBookmark } = useContext(dataContext);
+  const { dataState, handleBookmark, hoveredIndex, setHoveredIndex } =
+    useContext(dataContext);
 
   return (
     <>
@@ -14,7 +16,10 @@ export default function TrendingComponent() {
             return (
               item.isTrending && (
                 <>
-                  <TrendingItem key={index}>
+                  <TrendingItem
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    key={index}>
                     <Bookmark onClick={() => handleBookmark(index)}>
                       <BookmarkIcon
                         src={
@@ -24,6 +29,12 @@ export default function TrendingComponent() {
                         }
                       />
                     </Bookmark>
+                    {hoveredIndex === index && (
+                      <PlayContainer>
+                        <PlayButton src="/assets/Shape.svg" />
+                        <Play>Play</Play>
+                      </PlayContainer>
+                    )}
                     <TrendingImg src={item.thumbnail.trending?.small} alt="" />
                     <TrendingImgDesktop src={item.thumbnail.trending?.large} />
                     <MovieInformation>
@@ -67,12 +78,25 @@ const TrendingTitle = styled.h2`
   }
 `;
 
+const SlideAnimation = keyframes`
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
 const TrendingContent = styled.div`
   overflow-x: auto;
   white-space: nowrap;
   width: 100%;
   display: flex;
   gap: 2rem;
+  animation-name: ${SlideAnimation};
+  animation-duration: 0.3s;
 
   @media only screen and (min-width: 48rem) {
     gap: 4rem;
@@ -149,6 +173,15 @@ export const Bookmark = styled.button`
   background-color: #10141e8b;
   right: 0.8rem;
   top: 0.8rem;
+
+  &:hover {
+    background-color: #5b5b5b7d;
+    transition: 0.1s;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 export const BookmarkIcon = styled.img`

@@ -14,9 +14,11 @@ import { Bookmark } from "../components/TrendingComponent";
 import { BookmarkIcon } from "../components/TrendingComponent";
 import { useContext } from "react";
 import { dataContext } from "./MainLayout";
+import { PlayContainer, Play, PlayButton } from "../components/Recommended";
 
 export default function BookmarkPage() {
-  const { dataState, handleBookmark } = useContext(dataContext);
+  const { dataState, handleBookmark, hoveredIndex, setHoveredIndex } =
+    useContext(dataContext);
 
   return (
     <>
@@ -27,7 +29,10 @@ export default function BookmarkPage() {
             return (
               item.isBookmarked && (
                 <>
-                  <RecommendedItem key={index}>
+                  <RecommendedItem
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    key={index}>
                     <Bookmark onClick={() => handleBookmark(index)}>
                       <BookmarkIcon
                         src={
@@ -39,6 +44,12 @@ export default function BookmarkPage() {
                     </Bookmark>
                     <Thumbnail src={item.thumbnail.regular.small} />
                     <ThumbnailDesktop src={item.thumbnail.regular.large} />
+                    {hoveredIndex === index && (
+                      <PlayContainer>
+                        <PlayButton src="/assets/Shape.svg" />
+                        <Play>Play</Play>
+                      </PlayContainer>
+                    )}
                     <RecommendedInfo>
                       <MovieInfo>
                         {item.year} •{" "}

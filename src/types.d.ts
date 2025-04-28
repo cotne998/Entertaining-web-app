@@ -28,4 +28,6 @@ interface IDataContext {
   dataState: IdataState[];
   handleBookmark: (index: number) => void;
   inputValue: string;
+  hoveredIndex: number | null;
+  setHoveredIndex: React.Dispatch<React.SetStateAction<number | null>>;
 }

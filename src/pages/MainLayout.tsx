@@ -10,6 +10,8 @@ export const dataContext = createContext<IDataContext>({
   dataState: [],
   handleBookmark: () => {},
   inputValue: "",
+  hoveredIndex: null,
+  setHoveredIndex: () => {},
 });
 
 export default function MainLayout() {
@@ -17,6 +19,8 @@ export default function MainLayout() {
     const savedData = localStorage.getItem("dataState");
     return savedData ? JSON.parse(savedData) : data;
   });
+
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const [inputValue, setInputValue] = useState<string>("");
 
@@ -62,7 +66,14 @@ export default function MainLayout() {
           />
           <SearchImg src={SearchIcon} />
         </InputDiv>
-        <dataContext.Provider value={{ dataState, handleBookmark, inputValue }}>
+        <dataContext.Provider
+          value={{
+            dataState,
+            handleBookmark,
+            inputValue,
+            hoveredIndex,
+            setHoveredIndex,
+          }}>
           <Outlet />
         </dataContext.Provider>
       </main>
