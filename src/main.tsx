@@ -2,8 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./pages/Login";
-import LoginLayout from "./pages/LoginLayout";
 import MainLayout from "./pages/MainLayout";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
@@ -14,16 +12,6 @@ import Search from "./pages/Search";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LoginLayout />,
-    children: [
-      {
-        path: "/Login",
-        element: <Login />,
-      },
-    ],
-  },
-  {
-    path: "/Main",
     element: <MainLayout />,
     children: [
       {
